@@ -19,4 +19,8 @@ services:
       - SESSION_SECRET=secret324524
       - REDIS_MAXAGE=30000
     command: npm run dev
-    
+
+  database:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=docker123
