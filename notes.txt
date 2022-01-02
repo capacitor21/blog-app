@@ -1,0 +1,4 @@
+
+docker build -t example_image-name .
+
+docker run -v %cd%:/app:ro -v /app/node_modules --env-file ./.env -p 3000:4000 -d --name my_container my_image
