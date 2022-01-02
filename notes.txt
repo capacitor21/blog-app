@@ -114,3 +114,7 @@ Networks
     - DNS uses services names
 
 Middleware - a function that runs before your controller
+
+
+To ssh into the ec2 instance
+ssh -i E:\Projects\personal\first_docker_app\root.pem ubuntu@ec2-52-87-114-249.compute-1.amazonaws.com
