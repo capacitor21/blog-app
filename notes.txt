@@ -47,8 +47,12 @@ docker ps
 
 docker volume ls
     A volume is a persitent storage for your containers
+        - Binded volume: the volume is binded (synced) with local machine
+        - Anonymous volume: an unamed volume (hard to keep track off)
+        - Named volume: a volume for the container with a specified name 
+            - Can be used by multiple services
 
-docker volume prune (deletes all volumes can be dangerous)
+docker volume prune (deletes all NON RUNNING volumes can be dangerous)
 
 
 docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d 
@@ -68,3 +72,41 @@ docker exec -it container_name bash
     Enter the containers filesystem
 
 printenv
+
+
+
+mongo
+    mongo -u "root" -p "docker123"
+    > db
+    test
+    > use mydb
+    switched to db mydb
+    > show dbs
+    admin   0.000GB
+    config  0.000GB
+    local   0.000GB
+    > db.books.insert({"name":"Mike"})
+    WriteResult({ "nInserted" : 1 })
+    > db.books.find()
+    { "_id" : ObjectId("61d114c57cd74f8e9f30274f"), "name" : "Mike" }
+    > show dbs
+    admin   0.000GB
+    config  0.000GB
+    local   0.000GB
+    mydb    0.000GB
+    > exit
+
+OR docker exec -it first_docker_app_database_1 mongo -u "root" -p "docker123"  
+
+Must specify the ip of the mongo container and port 27017 when connecting
+
+
+docker inspect container_name
+    - Shows all information about a container
+
+docker logs
+
+
+Networks
+    - Each container has its own network, ips, and dns
+    - DNS uses services names
