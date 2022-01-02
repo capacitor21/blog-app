@@ -10,4 +10,7 @@ services:
       - /app/node_modules
     environment:
       - NODE_ENV=development
+      - MONGO_USER=root
+      - MONGO_PASSWORD=docker123
     command: npm run dev
+    

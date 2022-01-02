@@ -4,7 +4,9 @@ services:
     build:
       context: .
       args: 
-        NODE_ENV: development
+        NODE_ENV: production
     environment:
       - NODE_ENV=production
+      - MONGO_USER=root
+      - MONGO_PASSWORD=docker123
     command: npm start
