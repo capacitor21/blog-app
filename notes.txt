@@ -58,7 +58,8 @@ docker volume prune (deletes all NON RUNNING volumes can be dangerous)
 docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d 
     -f pass a compose file
     up specify we are composing
-    -d detached mode
+    -d detached mode4
+    --scale containernumber=2
 
     docker-compose.prod.yml for prod
     docker-compose.dev.yml for dev
@@ -105,8 +106,11 @@ docker inspect container_name
     - Shows all information about a container
 
 docker logs
+    -f to follow live
 
 
 Networks
     - Each container has its own network, ips, and dns
     - DNS uses services names
+
+Middleware - a function that runs before your controller

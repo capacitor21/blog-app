@@ -1,5 +1,9 @@
 version: "3"
 services:
+  nginx:
+    ports:
+      - "80:80"
+
   my-app:
     build:
       context: .
@@ -9,4 +13,5 @@ services:
       - NODE_ENV=production
       - MONGO_USER=root
       - MONGO_PASSWORD=docker123
+      - SESSION_SECRET=secret25235
     command: npm start
