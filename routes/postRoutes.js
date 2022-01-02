@@ -6,12 +6,12 @@ const protect = require('../middleware/authMiddleware')
 const router = express.Router()
 
 router.route('/')
-    .get(postController.getAllPosts)
-    .post(protect, postController.createPost)
+  .get(postController.getAllPosts)
+  .post(protect, postController.createPost)
 
 router.route('/:id')
-    .get(postController.getPost)
-    .patch(protect, postController.updatePost)
-    .delete(protect, postController.deletePost)
+  .get(postController.getPost)
+  .patch(protect, postController.updatePost)
+  .delete(protect, postController.deletePost)
 
 module.exports = router

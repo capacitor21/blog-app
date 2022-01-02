@@ -1,14 +1,14 @@
 const protect = (req, res, next) => {
-    const { user } = req.session
+  const { user } = req.session
 
-    if (!user) {
-        return res.status(401).json({
-            status: 'failed',
-            error: 'Unauthorized'
-        })
-    }
+  if (!user) {
+    return res.status(401).json({
+      status: 'failed',
+      error: 'Unauthorized'
+    })
+  }
 
-    next()
+  next()
 }
 
 module.exports = protect
